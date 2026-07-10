@@ -1,10 +1,16 @@
 "use client";
 
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { useAuth } from "@/components/AuthContext";
 
 export default function LoginPage() {
+  const router = useRouter();
+  const { loginAs } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [role, setRole] = useState<"customer" | "artisan">("customer");
   const [error, setError] = useState("");
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -21,7 +27,8 @@ export default function LoginPage() {
       return;
     }
 
-    console.log({ email, password });
+    loginAs(role);
+    router.push("/dashboard");
   };
 
   return (
@@ -58,9 +65,9 @@ export default function LoginPage() {
               <input type="checkbox" />
               Remember Me
             </label>
-            <a href="/forgot-password" className="font-medium text-indigo-600 hover:text-indigo-700">
+            <Link href="/forgot-password" className="font-medium text-indigo-600 hover:text-indigo-700">
               Forgot Password?
-            </a>
+            </Link>
           </div>
 
           {error ? <p className="text-sm text-red-600">{error}</p> : null}
@@ -72,9 +79,9 @@ export default function LoginPage() {
 
         <p className="mt-6 text-center text-sm text-slate-600">
           Don&apos;t have an account?{" "}
-          <a href="/register" className="font-medium text-indigo-600 hover:text-indigo-700">
+          <Link href="/register" className="font-medium text-indigo-600 hover:text-indigo-700">
             Register
-          </a>
+          </Link>
         </p>
       </div>
     </main>

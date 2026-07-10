@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function ForgotPasswordPage() {
   return (
     <main className="flex min-h-screen items-center justify-center bg-slate-50 px-4 py-12">
@@ -23,9 +25,9 @@ export default function ForgotPasswordPage() {
 
         <p className="mt-6 text-center text-sm text-slate-600">
           Remember your password?{" "}
-          <a href="/login" className="font-medium text-indigo-600 hover:text-indigo-700">
+          <Link href="/login" className="font-medium text-indigo-600 hover:text-indigo-700">
             Login
-          </a>
+          </Link>
         </p>
       </div>
     </main>

@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function ProfilePage() {
   return (
     <main className="flex min-h-screen items-center justify-center bg-slate-50 px-4 py-12">
@@ -40,10 +42,16 @@ export default function ProfilePage() {
           </div>
         </div>
 
-        <div className="mt-8">
-          <button className="w-full rounded-xl bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-indigo-700">
+        <div className="mt-8 grid gap-4 md:grid-cols-3">
+          <button className="rounded-xl bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-indigo-700">
             Save Changes
           </button>
+          <Link href="/settings" className="rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm font-semibold text-slate-700 text-center transition hover:border-indigo-500 hover:text-indigo-600">
+            Settings
+          </Link>
+          <Link href="/login" className="rounded-xl bg-red-600 px-4 py-2.5 text-sm font-semibold text-white text-center transition hover:bg-red-700">
+            Logout
+          </Link>
         </div>
       </div>
     </main>

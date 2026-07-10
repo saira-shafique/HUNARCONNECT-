@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function SettingsPage() {
   return (
     <main className="flex min-h-screen items-center justify-center bg-slate-50 px-4 py-12">
@@ -36,6 +38,11 @@ export default function SettingsPage() {
           <button className="mt-4 rounded-xl bg-red-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-red-700">
             Delete
           </button>
+        </div>
+        <div className="mt-6">
+          <Link href="/profile" className="inline-flex rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm font-semibold text-slate-700 transition hover:border-indigo-500 hover:text-indigo-600">
+            Back to Profile
+          </Link>
         </div>
       </div>
     </main>

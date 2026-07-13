@@ -26,7 +26,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/categories" className="transition hover:text-[#F5D7A3]">
+                <Link href="/#categories" className="transition hover:text-[#F5D7A3]">
                   Categories
                 </Link>
               </li>

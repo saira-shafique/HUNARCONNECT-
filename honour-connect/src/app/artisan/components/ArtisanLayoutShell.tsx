@@ -8,6 +8,7 @@ const navigation = [
   { name: "Dashboard", href: "/artisan/dashboard" },
   { name: "Portfolio", href: "/artisan/portfolio" },
   { name: "Add Product", href: "/artisan/add-product" },
+  { name: "Edit Profile", href: "/artisan/edit-profile" },
 ];
 
 export default function ArtisanLayoutShell({ children }: { children: ReactNode }) {

@@ -2,30 +2,30 @@ import Link from "next/link";
 
 export default function ForgotPasswordPage() {
   return (
-    <main className="flex min-h-screen items-center justify-center bg-slate-50 px-4 py-12">
-      <div className="w-full max-w-md rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
-        <div className="text-center">
-          <h1 className="text-3xl font-semibold text-slate-900">Forgot Password</h1>
-          <p className="mt-2 text-sm text-slate-600">Enter your registered email</p>
+    <main className="min-h-screen bg-[#FFF8F5] flex items-center justify-center px-4 py-16">
+      <div className="w-full max-w-md rounded-3xl bg-white border border-[#E9D9D1] p-10 shadow-xl">
+        <div className="text-center mb-8">
+          <h1 className="text-4xl font-bold text-[#8B1E4D]">Forgot Password</h1>
+          <p className="mt-3 text-sm text-[#6B7280]">Enter your registered email to reset your password.</p>
         </div>
 
-        <form className="mt-8 space-y-4">
+        <form className="space-y-5">
           <div>
-            <label className="mb-1 block text-sm font-medium text-slate-700">Email</label>
+            <label className="block mb-2 text-sm font-medium text-[#2D1F25]">Email</label>
             <input
               type="email"
-              className="w-full rounded-xl border border-slate-300 px-3 py-2.5 text-sm outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100"
+              className="w-full rounded-xl border border-[#E9D9D1] bg-white p-3 text-sm text-[#2D1F25] outline-none focus:ring-2 focus:ring-[#8B1E4D]"
             />
           </div>
 
-          <button className="w-full rounded-xl bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-indigo-700">
+          <button className="w-full rounded-xl bg-[#8B1E4D] py-3 text-sm font-semibold text-white transition hover:bg-[#73153F]">
             Send Reset Link
           </button>
         </form>
 
-        <p className="mt-6 text-center text-sm text-slate-600">
+        <p className="mt-8 text-center text-sm text-[#6B7280]">
           Remember your password?{" "}
-          <Link href="/login" className="font-medium text-indigo-600 hover:text-indigo-700">
+          <Link href="/login" className="font-semibold text-[#8B1E4D] hover:text-[#73153F]">
             Login
           </Link>
         </p>

@@ -1,93 +1,61 @@
 "use client";
 
 import Link from "next/link";
-import { useAuth } from "./AuthContext";
 
 export default function Header() {
-  const { authState, logout } = useAuth();
-  const isCustomer = authState.loggedIn && authState.role === "customer";
-  const isArtisan = authState.loggedIn && authState.role === "artisan";
-
   return (
-    <header className="border-b border-slate-200 bg-white">
-      <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-6 py-4">
-        <Link href="/" className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-indigo-600 text-lg font-semibold text-white">
-            H
+    <header className="sticky top-0 z-50 bg-[#FFF8F5] shadow-sm shadow-slate-200">
+      <div className="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-4 sm:px-8">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex items-center gap-3">
+            <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#8B1E4F] text-lg font-semibold text-white">
+              H
+            </div>
+            <Link href="/" className="text-xl font-semibold text-slate-900">
+              HunarConnect
+            </Link>
           </div>
-          <div>
-            <h2 className="text-lg font-semibold text-slate-900">HunarConnect</h2>
+
+          <div className="w-full sm:w-[520px]">
+            <input
+              type="text"
+              placeholder="Search products or artisans..."
+              className="w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-800 outline-none transition focus:border-[#8B1E4F] focus:ring-2 focus:ring-[#8B1E4F]/20"
+            />
           </div>
-        </Link>
+        </div>
 
-        <nav className="flex flex-wrap items-center gap-4 text-sm font-medium text-slate-600">
-          <Link href="/" className="hover:text-indigo-600">
-            Home
-          </Link>
-          <Link href="/categories" className="hover:text-indigo-600">
-            Categories
-          </Link>
-          {isCustomer ? (
-            <>
-              <Link href="/orders" className="hover:text-indigo-600">
-                My Orders
-              </Link>
-              <Link href="/profile" className="hover:text-indigo-600">
-                Profile
-              </Link>
-            </>
-          ) : null}
-          {isArtisan ? (
-            <>
-              <Link href="/my-shop" className="hover:text-indigo-600">
-                My Shop
-              </Link>
-              <Link href="/orders" className="hover:text-indigo-600">
-                Orders
-              </Link>
-              <Link href="/profile" className="hover:text-indigo-600">
-                Profile
-              </Link>
-            </>
-          ) : null}
-          {!authState.loggedIn ? (
-            <>
-              <Link href="/register" className="hover:text-indigo-600">
-                Become an Artisan
-              </Link>
-              <Link href="/about" className="hover:text-indigo-600">
-                About
-              </Link>
-              <Link href="/contact" className="hover:text-indigo-600">
-                Contact
-              </Link>
-            </>
-          ) : null}
-        </nav>
+        <div className="flex flex-col gap-4 border-t border-slate-200 pt-4 sm:flex-row sm:items-center sm:justify-between">
+          <nav className="flex flex-wrap items-center gap-4 text-sm font-medium text-slate-700">
+            <Link href="/" className="transition hover:text-[#8B1E4F]">
+              Home
+            </Link>
+            <Link href="/categories" className="transition hover:text-[#8B1E4F]">
+              Categories
+            </Link>
+            <Link href="/about" className="transition hover:text-[#8B1E4F]">
+              About
+            </Link>
+            <a href="#contact" className="transition hover:text-[#8B1E4F]">
+              Contact
+            </a>
+          </nav>
 
-        <div className="flex items-center gap-3">
-          {authState.loggedIn ? (
-            <>
-              <Link href="/notifications" className="rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-medium text-slate-700 transition hover:border-indigo-300 hover:text-indigo-600">
-                Notifications
-              </Link>
-              <button
-                onClick={logout}
-                className="rounded-full bg-red-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-red-700"
-              >
-                Logout
-              </button>
-            </>
-          ) : (
-            <>
-              <Link href="/login" className="rounded-full px-4 py-2 text-sm font-medium text-slate-700 transition hover:text-indigo-600">
-                Login
-              </Link>
-              <Link href="/register" className="rounded-full bg-indigo-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-indigo-700">
-                Register
-              </Link>
-            </>
-          )}
+          <div className="flex flex-wrap items-center gap-3">
+            <Link
+              href="/login"
+              className="rounded-full bg-white border border-[#8B1E4D] px-4 py-2 text-sm font-medium text-[#8B1E4D] transition hover:bg-[#8B1E4D]/5"
+            >
+              Login
+            </Link>
+            <Link
+              href="/register"
+              className="rounded-full bg-[#8B1E4D] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#73153F]"
+            >
+              Register
+            </Link>
+            
+          </div>
         </div>
       </div>
     </header>

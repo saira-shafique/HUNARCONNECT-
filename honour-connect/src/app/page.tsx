@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Home() {
   return (
     <main className="bg-[#FFF8F5] text-slate-900">
@@ -208,24 +210,28 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-gradient-to-r from-[#8B1E4F] via-[#A33369] to-[#8B1E4F] px-4 py-16 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-7xl rounded-[36px] bg-white/5 p-8 text-center shadow-[0_30px_120px_rgba(139,30,79,0.18)] sm:p-12">
-          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-pink-200">Grow your craft</p>
-          <h2 className="mt-4 text-3xl font-semibold text-white sm:text-4xl">Turn Your Skill Into Income</h2>
-          <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-slate-100 sm:text-base">
-            Join HunarConnect and start selling handmade products across Pakistan.
-          </p>
-          <a href="/register" className="mt-8 inline-flex rounded-full bg-white px-8 py-3 text-sm font-semibold text-[#8B1E4F] transition hover:bg-slate-100">
-            Become an Artisan
-          </a>
+      <section className="bg-[#FFF8F5] px-4 py-16 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-6xl flex items-center justify-center">
+          <div className="w-full max-w-2xl rounded-3xl bg-white p-12 text-center shadow-lg shadow-slate-200/40">
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#8B1E4D]">Grow your craft</p>
+            <h2 className="mt-4 text-3xl font-semibold text-slate-900 sm:text-4xl">Turn Your Skill Into Income</h2>
+            <p className="mx-auto mt-4 text-base leading-7 text-slate-600">
+              Join HunarConnect and start selling handmade products across Pakistan.
+            </p>
+            <a href="/register" className="mt-8 inline-flex rounded-full bg-[#8B1E4D] px-8 py-3 text-sm font-semibold text-white transition hover:bg-[#74153F]">
+              Become an Artisan
+            </a>
+          </div>
         </div>
       </section>
 
       <section className="px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="mb-10 max-w-2xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#8B1E4F]">Testimonials</p>
-            <h2 className="mt-4 text-3xl font-semibold text-slate-900 sm:text-4xl">What Customers Say</h2>
+            <Link href="/reviews" className="inline-block">
+              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#8B1E4F] underline underline-offset-2 decoration-[#8B1E4F]">Reviews</p>
+              <h2 className="mt-4 text-3xl font-semibold text-slate-900 sm:text-4xl">What Customers Say</h2>
+            </Link>
           </div>
 
           <div className="grid gap-6 md:grid-cols-3">

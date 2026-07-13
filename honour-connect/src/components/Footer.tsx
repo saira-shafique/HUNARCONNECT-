@@ -2,64 +2,115 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-r from-[#5b183d] via-[#7b224d] to-[#9a3b5f] text-white">
-      <div className="mx-auto max-w-7xl px-6 py-16 sm:px-8">
-        <div className="grid gap-12 lg:grid-cols-3">
-          <div className="space-y-4">
-            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#4A1638] text-lg font-semibold text-white">
+    <footer className="bg-[#8B1E4D] text-white">
+      <div className="mx-auto max-w-7xl px-6 pt-16 pb-8">
+        {/* Four Columns Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+          {/* Column 1: Logo & Brand */}
+          <div>
+            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/20 text-lg font-semibold text-white mb-4">
               H
             </div>
-            <div>
-              <h2 className="text-lg font-semibold text-white">HunarConnect</h2>
-              <p className="mt-3 max-w-sm text-sm leading-6 text-white/90">
-                HunarConnect helps local women artisans showcase and sell handmade products.
-              </p>
-            </div>
+            <h2 className="font-bold tracking-[0.16em] uppercase text-white text-lg">HunarConnect</h2>
+            <p className="mt-3 text-sm leading-6 text-white/80">
+              Supporting local women artisans across Pakistan by connecting handmade products with customers.
+            </p>
           </div>
 
+          {/* Column 2: Quick Links */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-white">Quick Links</h3>
-            <ul className="mt-5 space-y-3 text-sm text-white/90">
+            <h3 className="font-bold tracking-[0.25em] uppercase text-white">Quick Links</h3>
+            <ul className="mt-5 space-y-3 text-sm">
               <li>
-                <Link href="/" className="transition hover:text-[#F5D7A3]">
+                <Link href="/" className="text-white/80 transition-all duration-200 hover:text-white">
                   Home
                 </Link>
               </li>
               <li>
-                <Link href="/categories" className="transition hover:text-[#F5D7A3]">
+                <Link href="/categories" className="text-white/80 transition-all duration-200 hover:text-white">
                   Categories
                 </Link>
               </li>
               <li>
-                <Link href="/register" className="transition hover:text-[#F5D7A3]">
-                  Artisans
-                </Link>
-              </li>
-              <li>
-                <Link href="/about" className="transition hover:text-[#F5D7A3]">
+                <Link href="/about" className="text-white/80 transition-all duration-200 hover:text-white">
                   About
                 </Link>
               </li>
               <li>
-                <a href="#contact" className="transition hover:text-[#F5D7A3]">
+                <a href="#contact" className="text-white/80 transition-all duration-200 hover:text-white">
                   Contact
                 </a>
               </li>
             </ul>
           </div>
 
+          {/* Column 3: Categories */}
+          <div>
+            <h3 className="font-bold tracking-[0.25em] uppercase text-white">Categories</h3>
+            <ul className="mt-5 space-y-3 text-sm">
+              <li>
+                <Link href="/categories" className="text-white/80 transition-all duration-200 hover:text-white">
+                  Machine Stitching
+                </Link>
+              </li>
+              <li>
+                <Link href="/categories" className="text-white/80 transition-all duration-200 hover:text-white">
+                  Embroidery
+                </Link>
+              </li>
+              <li>
+                <Link href="/categories" className="text-white/80 transition-all duration-200 hover:text-white">
+                  Zardozi
+                </Link>
+              </li>
+              <li>
+                <Link href="/categories" className="text-white/80 transition-all duration-200 hover:text-white">
+                  Crochet
+                </Link>
+              </li>
+              <li>
+                <Link href="/categories" className="text-white/80 transition-all duration-200 hover:text-white">
+                  Fabric Painting
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Column 4: Contact */}
           <div id="contact">
-            <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-white">Contact</h3>
-            <div className="mt-5 space-y-3 text-sm text-white/90">
-              <p>Email: support@hunarconnect.com</p>
-              <p>Phone: +92 300 0000000</p>
-              <p>Location: Lahore, Pakistan</p>
+            <h3 className="font-bold tracking-[0.25em] uppercase text-white">Contact</h3>
+            <div className="mt-5 space-y-3 text-sm text-white/80">
+              <div>
+                <p className="font-medium text-white/90">Email:</p>
+                <a href="mailto:support@hunarconnect.com" className="text-white/80 transition-all duration-200 hover:text-white">
+                  support@hunarconnect.com
+                </a>
+              </div>
+              <div>
+                <p className="font-medium text-white/90">Phone:</p>
+                <a href="tel:+923000000000" className="text-white/80 transition-all duration-200 hover:text-white">
+                  +92 300 0000000
+                </a>
+              </div>
+              <div>
+                <p className="font-medium text-white/90">Location:</p>
+                <p className="text-white/80">Lahore, Pakistan</p>
+              </div>
             </div>
           </div>
         </div>
 
-        <div className="mt-12 border-t border-white/10 pt-6 text-sm text-white/80">
-          © 2026 HunarConnect
+        {/* Bottom Section */}
+        <div className="mt-10 border-t border-white/20 pt-6 flex flex-col md:flex-row items-center justify-between text-sm text-white/80 gap-4">
+          <p>© 2026 HunarConnect. All Rights Reserved.</p>
+          <div className="flex gap-6">
+            <Link href="/privacy" className="text-white/80 transition-all duration-200 hover:text-white">
+              Privacy Policy
+            </Link>
+            <Link href="/terms" className="text-white/80 transition-all duration-200 hover:text-white">
+              Terms & Conditions
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

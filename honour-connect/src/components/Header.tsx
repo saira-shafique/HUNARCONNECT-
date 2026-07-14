@@ -30,7 +30,7 @@ export default function Header() {
             <Link href="/" className="transition hover:text-[#8B1E4F]">
               Home
             </Link>
-            <Link href="/categories" className="transition hover:text-[#8B1E4F]">
+            <Link href="/#categories" className="transition hover:text-[#8B1E4F]">
               Categories
             </Link>
             <Link href="/about" className="transition hover:text-[#8B1E4F]">

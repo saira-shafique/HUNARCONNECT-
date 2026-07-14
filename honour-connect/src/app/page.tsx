@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Home() {
   return (
     <main className="bg-[#FFF8F5] text-slate-900">
@@ -67,41 +69,49 @@ export default function Home() {
             {[
               {
                 name: "Machine Stitching",
+                route: "machine-stitching",
                 description: "Professional tailoring and custom garment stitching.",
                 icon: "🧵",
               },
               {
                 name: "Embroidery",
+                route: "embroidery",
                 description: "Beautiful hand and machine embroidered designs.",
                 icon: "🪡",
               },
               {
                 name: "Zardozi",
+                route: "zardozi",
                 description: "Traditional gold and silver thread embroidery.",
                 icon: "✨",
               },
               {
                 name: "Applique",
+                route: "applique",
                 description: "Creative fabric patchwork with artistic designs.",
                 icon: "🧵",
               },
               {
                 name: "Crochet",
+                route: "crochet",
                 description: "Handmade crochet accessories, clothing, and décor.",
                 icon: "🧶",
               },
               {
                 name: "Fabric Painting",
+                route: "fabric-painting",
                 description: "Unique hand-painted fabrics and textile art.",
                 icon: "🎨",
               },
               {
                 name: "Mirror Work",
+                route: "mirror-work",
                 description: "Traditional mirror embroidery for vibrant ethnic wear.",
                 icon: "🪞",
               },
               {
                 name: "Lace Trims",
+                route: "lace-trims",
                 description: "Decorative lace borders for dresses and crafts.",
                 icon: "🧵",
               },
@@ -115,9 +125,12 @@ export default function Home() {
                 </div>
                 <h3 className="text-xl font-semibold text-slate-900">{category.name}</h3>
                 <p className="mt-2 text-sm leading-6 text-slate-600">{category.description}</p>
-                <button className="mt-6 inline-flex rounded-full bg-[#8B1E4F] px-5 py-2 text-sm font-semibold text-white transition hover:bg-[#6F173D]">
+                <Link
+                  href={`/categories/${category.route}`}
+                  className="mt-6 inline-flex rounded-full bg-[#8B1E4F] px-5 py-2 text-sm font-semibold text-white transition hover:bg-[#6F173D]"
+                >
                   Explore
-                </button>
+                </Link>
               </div>
             ))}
           </div>
